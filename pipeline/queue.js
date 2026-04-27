@@ -3,7 +3,7 @@
 /**
  * VoiceQueue — Singleton FIFO queue for sequential voice message processing.
  * Guarantees that audio jobs are processed one at a time, preventing
- * concurrent Whisper/ffmpeg invocations and resource contention.
+ * concurrent Whisper/ffmpeg invocations and resource contention on CPU.
  */
 class VoiceQueue {
     constructor() {
@@ -13,7 +13,7 @@ class VoiceQueue {
 
     /**
      * Add a job to the tail of the queue and trigger processing.
-     * @param {Function} job — Async function (or sync) to execute.
+     * @param {Function} job — Async function to execute.
      */
     enqueue(job) {
         this.queue.push(job);
@@ -35,7 +35,7 @@ class VoiceQueue {
             console.error('[queue] Erreur sur job :', err.message);
         } finally {
             this.processing = false;
-            this.process();
+            this.process(); // process next
         }
     }
 }
