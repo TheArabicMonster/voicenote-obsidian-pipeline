@@ -1,0 +1,22 @@
+channels:
+  whatsapp:
+    enabled: false
+    allowedNumber: ""
+    sessionPath: ".wwebjs_auth"
+  telegram:
+    enabled: false
+    allowedUserId: ""
+
+vault:
+  path: ""
+  categoriesFile: "categories.json"
+  inboxFolder: "_Inbox"
+  inboxTag: "a-classer"
+
+whisper:
+  model: "medium"
+  language: "fr"
+
+pipeline:
+  categoryApprovalTimeoutMin: 10
+  audioTmpPath: "./tmp/audio"

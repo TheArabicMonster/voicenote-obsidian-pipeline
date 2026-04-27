@@ -1,0 +1,35 @@
+{
+  "name": "voicenote-obsidian-pipeline",
+  "version": "1.0.0",
+  "description": "Voice/text message capture from WhatsApp or Telegram → Whisper transcription → Groq AI reformulation → Obsidian vault",
+  "main": "index.js",
+  "type": "commonjs",
+  "bin": {
+    "voicenote": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "start:wa": "node index.js --wa",
+    "start:tg": "node index.js --tg",
+    "setup": "node bin/setup.js",
+    "status": "node bin/cli.js status",
+    "logs": "node bin/cli.js logs"
+  },
+  "dependencies": {
+    "whatsapp-web.js": "^1.23.0",
+    "qrcode-terminal": "^0.12.0",
+    "puppeteer": "^21.0.0",
+    "node-telegram-bot-api": "^0.66.0",
+    "uuid": "^9.0.0",
+    "inquirer": "^9.0.0",
+    "js-yaml": "^4.1.0",
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "slugify": "^1.6.6",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT"
+}

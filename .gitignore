@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Environment secrets
+.env
+
+# WhatsApp session
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Temp audio files
+tmp/
+
+# Pending approvals (transient bot state)
+pending.json
+
+# Puppeteer cache
+.local-chromium/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
